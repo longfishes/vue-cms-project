@@ -6,6 +6,15 @@ module.exports = defineConfig({
       'cn-cd-dx-tmp18.natfrp.cloud',
       '.cn-cd-dx-tmp18.natfrp.cloud'
     ],
-    port: 80
+    port: 80,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   }
 })

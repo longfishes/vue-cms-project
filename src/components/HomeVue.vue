@@ -129,7 +129,7 @@ export default {
   beforeMount() {
     this.$axios({
       method: 'get',
-      url: this.$httpUrl + '/competitions/avai',
+      url: '/competitions/avai',
       headers: {
         'token':JSON.parse(sessionStorage.getItem('CurUser')).jwt
       }

@@ -75,7 +75,7 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
 
-          this.$axios.post(this.$httpUrl + '/register', this.regisForm).then(res => res.data).then(res => {
+          this.$axios.post('/register', this.regisForm).then(res => res.data).then(res => {
             if (res.code === 1) {
               this.$message.success("注册成功，正在为您跳转登陆页面...")
               this.$router.replace('/');

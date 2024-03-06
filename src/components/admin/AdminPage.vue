@@ -139,7 +139,7 @@ export default {
         if (this.form.id !== '' && this.form.password === ''){
           this.$axios({
             method: 'put',
-            url: this.$httpUrl + '/user/update',
+            url: '/user/update',
             data: {
               id: this.form.id,
               username: this.form.username,
@@ -162,7 +162,7 @@ export default {
         }else if (this.form.id !== '' && this.form.password !== ''){
           this.$axios({
             method: 'put',
-            url: this.$httpUrl + '/user/update',
+            url: '/user/update',
             data: {
               id: this.form.id,
               username: this.form.username,
@@ -185,7 +185,7 @@ export default {
         }else if (this.form.password !== ''){
           this.$axios({
             method:'post',
-            url: this.$httpUrl + '/user/insert',
+            url: '/user/insert',
             data:{
               username: this.form.username,
               password: this.form.password,
@@ -209,7 +209,7 @@ export default {
         }else{
           this.$axios({
             method:'post',
-            url: this.$httpUrl + '/user/insert',
+            url: '/user/insert',
             data:{
               username: this.form.username,
               organization: this.form.organization,
@@ -236,7 +236,7 @@ export default {
     loadGet() {
       this.$axios({
         method:'get',
-        url: this.$httpUrl + '/user/list?page=' +
+        url: '/user/list?page=' +
             p + '&' + 'pageSize=' + ps,
         headers: {
           'token':JSON.parse(sessionStorage.getItem('CurUser')).jwt
@@ -286,7 +286,7 @@ export default {
       }).then(() => {
         this.$axios({
           method:'delete',
-          url:this.$httpUrl + '/user/' + row.id,
+          url: '/user/' + row.id,
           headers:{
             'token':JSON.parse(sessionStorage.getItem('CurUser')).jwt
           }
@@ -334,7 +334,7 @@ export default {
           tempStr += this.multipleSelection[this.multipleSelection.length - 1].id;
           this.$axios({
             method:'delete',
-            url:this.$httpUrl + '/user/' + tempStr,
+            url: '/user/' + tempStr,
             headers: {
               'token':JSON.parse(sessionStorage.getItem('CurUser')).jwt
             }

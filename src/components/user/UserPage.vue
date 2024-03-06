@@ -281,7 +281,7 @@ export default {
 
       this.$axios({
         method: 'get',
-        url: this.$httpUrl + '/competitions?page=' +
+        url: '/competitions?page=' +
             p + '&' + 'pageSize=' + ps + '&copName=' + this.search +
             '&type=' + this.copType + '&isFull=' + this.isFlag +
             '&date=' + this.time + '&order=' + this.order + '&username=' +
@@ -337,7 +337,7 @@ export default {
 
       this.$axios({
         method: 'post',
-        url: this.$httpUrl + '/sign',
+        url: '/sign',
         data: {
           username: JSON.parse(sessionStorage.getItem('CurUser')).username,
           copId: row.id
@@ -390,7 +390,7 @@ export default {
 
         this.$axios({
           method: 'post',
-          url: this.$httpUrl + '/unSign',
+          url: '/unSign',
           data: {
             username: JSON.parse(sessionStorage.getItem('CurUser')).username,
             copId: row.id
@@ -420,7 +420,7 @@ export default {
       // }).then(() => {
       //   this.$axios({
       //     method: 'delete',
-      //     url: this.$httpUrl + '/competitions/' + row.id,
+      //     url: '/competitions/' + row.id,
       //     headers: {
       //       'token': JSON.parse(sessionStorage.getItem('CurUser')).jwt
       //     }
@@ -462,7 +462,7 @@ export default {
     //       tempStr += this.multipleSelection[this.multipleSelection.length - 1].id;
     //       this.$axios({
     //         method: 'delete',
-    //         url: this.$httpUrl + '/competitions/' + tempStr,
+    //         url: '/competitions/' + tempStr,
     //         headers: {
     //           'token': JSON.parse(sessionStorage.getItem('CurUser')).jwt
     //         }
@@ -490,10 +490,10 @@ export default {
         cancelButtonText: '取消',
         type: 'info'
       }).then(() => {
-        // location.href = this.$httpUrl + '/export';
+        // location.href = '/export';
         this.$axios({
           method: 'get',
-          url: this.$httpUrl + '/export',
+          url: '/export',
           responseType: 'blob',
           headers: {
             'token':JSON.parse(sessionStorage.getItem('CurUser')).jwt
@@ -531,7 +531,7 @@ export default {
     //     if (!this.form.mod) {
     //       this.$axios({
     //         method: 'post',
-    //         url: this.$httpUrl + '/competitions',
+    //         url: '/competitions',
     //         data: {
     //           copName: this.form.name,
     //           info: this.form.info,
@@ -558,7 +558,7 @@ export default {
     //     } else {
     //       this.$axios({
     //         method: 'put',
-    //         url: this.$httpUrl + '/competitions',
+    //         url: '/competitions',
     //         data: {
     //           id: VARID,
     //           copName: this.form.name,

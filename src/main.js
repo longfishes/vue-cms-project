@@ -10,12 +10,13 @@ import VueRouter from "vue-router";
 
 Vue.prototype.moment = moment
 Vue.prototype.$axios = axios;
-Vue.prototype.$httpUrl = 'http://139.155.138.49:25677'
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+
+axios.defaults.baseURL = '/api'
 
 new Vue({
   router,

@@ -60,7 +60,7 @@ export default {
     loadGet() {
       this.$axios({
         method: 'get',
-        url: this.$httpUrl + '/competitions/user?username=' +
+        url: '/competitions/user?username=' +
             JSON.parse(sessionStorage.getItem('CurUser')).username,
         headers: {
           'token': JSON.parse(sessionStorage.getItem('CurUser')).jwt

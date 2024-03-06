@@ -95,7 +95,7 @@ export default {
           // this.$message.warning('不修改密码的保存!');
           this.$axios({
             method: 'put',
-            url: this.$httpUrl + '/user/update',
+            url: '/user/update',
             data: {
               username: this.form.username,
               organization: this.form.organization,
@@ -122,7 +122,7 @@ export default {
           else {
             this.$axios({
               method: 'put',
-              url: this.$httpUrl + '/user/update',
+              url: '/user/update',
               data: {
                 username: this.form.username,
                 organization: this.form.organization,

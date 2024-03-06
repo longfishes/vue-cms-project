@@ -60,7 +60,7 @@
                 this.$refs.loginForm.validate((valid) => {
                     if (valid) { //valid成功为true，失败为false
                         //去后台验证用户名密码
-                        this.$axios.post(this.$httpUrl+'/login',this.loginForm).then(res=>res.data).then(res=>{
+                        this.$axios.post('/login',this.loginForm).then(res=>res.data).then(res=>{
                             // console.log(res)
                             if(res.code === 1){
                               try {
