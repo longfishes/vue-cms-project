@@ -3,8 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     allowedHosts: [
-      'cn-cd-dx-tmp18.natfrp.cloud',
-      '.cn-cd-dx-tmp18.natfrp.cloud'
+        'longfish.site',
+        '.longfish.site'
     ],
     port: 80,
     proxy: {
